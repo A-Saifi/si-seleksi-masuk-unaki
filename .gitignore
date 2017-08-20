@@ -1,7 +1,7 @@
 .DS_Store
 
 application/cache/*
-!application/cache/session/
+!application/cache/sessions/
 !application/cache/index.html
 !application/cache/.htaccess
 
