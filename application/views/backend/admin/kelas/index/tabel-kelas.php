@@ -3,6 +3,8 @@
   <tr>
     <th>Tahun</th>
     <th>Nama</th>
+    <th>Kode</th>
+    <th>Peserta</th>
     <th>Status</th>
     <th>Edit</th>
   </tr>
@@ -13,6 +15,8 @@
       <tr>
         <td><?= $kel->tahun_kelas  ?></td>
         <td><?= $kel->nama_kelas  ?></td>
+        <td><?= $kel->kode_kelas  ?></td>
+        <td><a href="<?= base_url('admin/kelas/peserta?kelas='.$kel->id_kelas)  ?>" class="btn btn-primary btn-xs btn-block">Lihat peserta</a></td>
         <td><?= $kel->status_kelas  ?></td>
         <td class="text-center">
           <button type="button" name="button" class="btn btn-warning btn-xs btn-block" data-toggle="modal" data-target="#edit<?= $kel->id_kelas  ?>">
@@ -26,6 +30,8 @@
   <tr>
     <th>Tahun</th>
     <th>Nama</th>
+    <th>Kode</th>
+    <th>Peserta</th>
     <th>Status</th>
     <th>Edit</th>
   </tr>

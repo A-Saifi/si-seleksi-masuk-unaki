@@ -27,8 +27,13 @@ class Kelas_model extends CI_Model
 
     function insert($data)
     {
-      $this->db->insert('kelas', $data);
-      return "Data kelas berhasil ditambahkan";
+      $check = $this->db->get_where('kelas', ['kode_kelas' => $data['kode_kelas']]);
+      if ($check->num_rows() == 0) {
+        $this->db->insert('kelas', $data);
+        return true;
+      }else {
+        return false;
+      }
     }
 
     function update($id_kelas, $data)
@@ -38,6 +43,29 @@ class Kelas_model extends CI_Model
         ->update('kelas', $data);
 
       return "Data kelas berhasil diubah";
+    }
+
+    function delete($id_kelas)
+    {
+      $response = $this->db->delete('kelas',['id_kelas' => $id_kelas]);
+      if($response)
+      {
+          return "Data kelas berhasil dihapus";
+      }
+      else
+      {
+          return "Gagal menghapus data kelas";
+      }
+    }
+
+    function get_kelas($id_kelas)
+    {
+      $this->db
+        ->select('*')
+        ->from('kelas')
+        ->where('id_kelas', $id_kelas);
+
+      return $this->db->get()->row();
     }
 
     function get_peserta($id_kelas)

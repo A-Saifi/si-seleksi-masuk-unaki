@@ -40,6 +40,16 @@ class Program_studi_model extends CI_Model
     return "Data program studi berhasil diubah";
   }
 
+  function get_active()
+  {
+    $this->db
+      ->select('*')
+      ->from('program_studi')
+      ->where('status_program_studi', 'active');
+
+    return $this->db->get()->result();
+  }
+
 }
 
 ?>

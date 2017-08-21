@@ -10,7 +10,7 @@
         <form class="" action="<?= base_url('admin/petugas/tambah')  ?>" method="post">
           <div class="modal-body">
 
-            <?php //$this->load->view('backend/admin/petugas/index/modal-tambah/form') ?>
+            <?php $this->load->view('backend/admin/kelas/peserta/modal-tambah/form') ?>
 
           </div>
           <div class="modal-footer">

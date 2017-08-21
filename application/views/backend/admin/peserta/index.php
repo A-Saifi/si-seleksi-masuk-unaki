@@ -19,10 +19,7 @@
       <div class="col-md-12">
         <div class="box">
               <div class="box-header">
-
-                <?php $this->load->view('backend/admin/peserta/index/modal-tambah') ?>
-                <button class="btn btn-primary" data-toggle="modal" data-target="#tambah"><i class="fa fa-plus"></i> Tambah Peserta</button>
-
+                <h3 class="box-title">Semua Peserta</h3>
               </div>
               <!-- /.box-header -->
               <div class="box-body">

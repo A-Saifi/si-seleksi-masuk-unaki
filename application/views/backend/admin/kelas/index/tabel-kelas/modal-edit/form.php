@@ -1,4 +1,8 @@
 <div class="form-group">
+  <label>Kode Kelas</label>
+  <input type="text" class="form-control" placeholder="Ketikkan kode kelas ..." required name="kode_kelas" value="<?= $kel->kode_kelas  ?>">
+</div>
+<div class="form-group">
   <label>Nama Kelas</label>
   <input type="text" class="form-control" placeholder="Ketikkan nama kelas ..." required name="nama_kelas" value="<?= $kel->nama_kelas  ?>">
 </div>
