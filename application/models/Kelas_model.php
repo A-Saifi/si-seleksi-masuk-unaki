@@ -38,11 +38,24 @@ class Kelas_model extends CI_Model
 
     function update($id_kelas, $data)
     {
-      $this->db
-        ->where('id_kelas', $id_kelas)
-        ->update('kelas', $data);
-
-      return "Data kelas berhasil diubah";
+      $check = $this->db->get_where('kelas', ['kode_kelas' => $data['kode_kelas']]);
+      if ($check->num_rows()==0) {
+        $this->db
+          ->where('id_kelas', $id_kelas)
+          ->update('kelas', $data);
+        return true;
+      }elseif ($check->num_rows()==1) {
+        if ($this->db->get_where('kelas', ['id_kelas' => $id_kelas])->row()->kode_kelas==$check->row()->kode_kelas) {
+          $this->db
+            ->where('id_kelas', $id_kelas)
+            ->update('kelas', $data);
+          return true;
+        }else {
+          return false;
+        }
+      }else {
+        return false;
+      }
     }
 
     function delete($id_kelas)

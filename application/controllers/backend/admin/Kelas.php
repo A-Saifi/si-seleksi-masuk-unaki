@@ -72,7 +72,11 @@ class Kelas extends Admin
        ];
 
        $this->load->model('Kelas_model');
-       $this->alert($this->Kelas_model->update($this->input->post('id_kelas'), $data),base_url('admin/kelas'));
+       if ($this->Kelas_model->update($this->input->post('id_kelas'), $data)) {
+         $this->alert('Data kelas berhasil diubah', base_url('admin/kelas'));
+       }else {
+         $this->alert('Kode kelas sudah dipakai, gunakan kode kelas sebelumnya atau kode kelas lain', base_url('admin/kelas?edit='.$this->input->post('id_kelas')));
+       }
      }else {
        $this->alert("Tidak ada data kelas yang dapat diubah", base_url('admin/kelas'));
      }
