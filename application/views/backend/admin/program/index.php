@@ -53,7 +53,7 @@
               <!-- /.box-body -->
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary pull-right" name="tambah">
-                  Tambah
+                  Simpan
                 </button>
               </div>
               </form>

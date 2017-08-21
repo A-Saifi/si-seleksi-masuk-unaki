@@ -39,7 +39,7 @@ class Backend extends CI_Controller
     parent::__construct();
 
     $this->load->helper(['url', 'html']);
-    $this->load->library(['session', 'layout', 'sidebar']);
+    $this->load->library(['session', 'layout', 'backend/sidebar']);
 
   }
 

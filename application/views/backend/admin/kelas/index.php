@@ -1,14 +1,13 @@
-
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Peserta Ujian
-      <small>Daftar Lengkap Peserta Ujian</small>
+      Kelas
+      <small>Daftar Lengkap Kelas</small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="<?= base_url('admin')  ?>"><i class="fa fa-dashboard"></i> Home</a></li>
       <li><a href="<?= base_url('admin/dashboard')  ?>"> Dashboard</a></li>
-      <li class="active">Peserta</li>
+      <li class="active">Kelas</li>
     </ol>
   </section>
 
@@ -20,20 +19,22 @@
         <div class="box">
               <div class="box-header">
 
-                <?php $this->load->view('backend/admin/peserta/index/modal-tambah') ?>
-                <button class="btn btn-primary" data-toggle="modal" data-target="#tambah"><i class="fa fa-plus"></i> Tambah Peserta</button>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#tambah"><i class="fa fa-plus"></i> Tambah Kelas</button>
+                <?php $this->load->view('backend/admin/kelas/index/modal-tambah') ?>
 
               </div>
               <!-- /.box-header -->
               <div class="box-body">
 
-                <?php if ($peserta==null): ?>
+                <?php if ($kelas!=null): ?>
+                  <?php $this->load->view('backend/admin/kelas/index/tabel-kelas') ?>
+                <?php else: ?>
                   <div class="callout callout-warning">
                     <h4><i class="fa fa-warning"></i> Perhatian!</h4>
-                    <p>Mohon maaf kami sedang melakukan maintenance.</p>
+                    <p>Tidak ada data kelas, silahkan tambahkan data kelas terlebih dahulu.</p>
                   </div>
                 <?php endif; ?>
-
+                
               </div>
               <!-- /.box-body -->
         </div>
