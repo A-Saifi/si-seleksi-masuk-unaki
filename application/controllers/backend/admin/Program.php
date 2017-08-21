@@ -25,7 +25,6 @@ class Program extends Admin
     $data = [
       'title' => 'Program Studi',
       'num_sidebar' => 3,
-      'icheck' => 'yes',
       'data_table' => 'yes',
       'program_studi' => $program,
       'status' => $status,

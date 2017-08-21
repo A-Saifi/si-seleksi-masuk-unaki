@@ -5,10 +5,11 @@
 <div class="form-group">
   <label>Status</label>
     <?php foreach ($status as $stat): ?>
-        <br>
+      <div class="radio">
         <label>
-        <input type="radio" name="status_program_studi" value="<?= $stat  ?>" class="flat-red" required>
-        <?= ucwords(strtolower($stat))  ?>
+          <input type="radio" name="status_program_studi" value="<?= $stat  ?>" required>
+          <?= ucwords(strtolower($stat))  ?>
         </label>
+      </div>
     <?php endforeach; ?>
 </div>

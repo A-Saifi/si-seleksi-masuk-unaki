@@ -17,10 +17,6 @@
   <?php $this->load->view('_layout/backend/adminlte/footer/data-table/data-table')  ?>
 <?php endif; ?>
 
-<?php if (isset($icheck)): ?>
-  <script src="<?= base_url('assets/adminlte/') ?>plugins/iCheck/icheck.min.js"></script>
-<?php endif; ?>
-
 <script>
 $(document).ready(function () {
   $('.sidebar-menu').tree();
@@ -30,13 +26,6 @@ $(document).ready(function () {
   <?php endif; ?>
   <?php if ($this->input->get('edit')!=null && isset($modal_crud)): ?>
     $("#edit<?= $this->input->get('edit')  ?>").modal('show');
-  <?php endif; ?>
-
-  <?php if (isset($icheck)): ?>
-    $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
-      checkboxClass: 'icheckbox_flat-green',
-      radioClass   : 'iradio_flat-green'
-    })
   <?php endif; ?>
 
 })
