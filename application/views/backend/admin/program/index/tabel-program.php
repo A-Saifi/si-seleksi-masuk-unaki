@@ -3,6 +3,7 @@
   <thead>
   <tr>
     <th>No.</th>
+    <th>Kode</th>
     <th>Nama</th>
     <th>Status</th>
     <th>Edit</th>
@@ -13,6 +14,7 @@
       <?php  $this->load->view('backend/admin/program/index/tabel-program/modal-edit', ['program' => $program]) ?>
       <tr>
         <td class="text-center"><?= $counter+=1  ?></td>
+        <td><?= $program->kode_program_studi  ?></td>
         <td><?= $program->nama_program_studi  ?></td>
         <td><?= $program->status_program_studi  ?></td>
         <td class="text-center">
@@ -23,12 +25,13 @@
       </tr>
     <?php endforeach; ?>
   </tbody>
-  <tfoot>
+  <!-- <tfoot>
   <tr>
     <th></th>
+    <th>Kode</th>
     <th>Nama</th>
     <th>Status</th>
     <th>Edit</th>
   </tr>
-  </tfoot>
+  </tfoot> -->
 </table>

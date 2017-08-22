@@ -1,4 +1,8 @@
 <div class="form-group">
+  <label>Kode Program Studi</label>
+  <input type="text" class="form-control" placeholder="Ketikkan kode program studi ..." required name="kode_program_studi" value="<?= $program->kode_program_studi ?>">
+</div>
+<div class="form-group">
   <label>Nama Program Studi</label>
   <input type="text" class="form-control" placeholder="Ketikkan nama program studi ..." required name="nama_program_studi" value="<?= $program->nama_program_studi ?>">
 </div>

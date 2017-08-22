@@ -26,18 +26,35 @@ class Program_studi_model extends CI_Model
 
   function insert($data)
   {
-    $this->db->insert('program_studi', $data);
-
-    return "Data program studi berhasil ditambahkan";
+    $check = $this->db->get_where('program_studi', ['kode_program_studi' => $data['kode_program_studi']]);
+    if ($check->num_rows() == 0) {
+      $this->db->insert('program_studi', $data);
+      return true;
+    }else {
+      return false;
+    }
   }
 
   function update($id_program_studi, $data)
   {
-    $this->db
-      ->where('id_program_studi', $id_program_studi)
-      ->update('program_studi', $data);
-
-    return "Data program studi berhasil diubah";
+    $check = $this->db->get_where('program_studi', ['kode_program_studi' => $data['kode_program_studi']]);
+    if ($check->num_rows()==0) {
+      $this->db
+        ->where('id_program_studi', $id_program_studi)
+        ->update('program_studi', $data);
+      return true;
+    }elseif ($check->num_rows()==1) {
+      if ($this->db->get_where('program_studi', ['id_program_studi' => $id_program_studi])->row()->kode_program_studi==$check->row()->kode_program_studi) {
+        $this->db
+          ->where('id_program_studi', $id_program_studi)
+          ->update('program_studi', $data);
+        return true;
+      }else {
+        return false;
+      }
+    }else {
+      return false;
+    }
   }
 
   function get_active()
