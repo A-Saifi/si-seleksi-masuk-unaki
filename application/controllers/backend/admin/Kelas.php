@@ -97,7 +97,7 @@ class Kelas extends Admin
      }
    }
 
-   function peserta()
+   function detail()
    {
      if ($this->input->get('kelas')!=null) {
        $this->load->model('Kelas_model');
@@ -108,15 +108,16 @@ class Kelas extends Admin
        $program = $this->Program_studi_model->get_active();
 
        $data = [
-         'title' => 'Peserta',
+         'title' => 'Detail: '.$kelas->nama_kelas,
          'num_sidebar' => 4,
          'data_table' => 'yes',
          'kelas' => $kelas,
          'peserta' => $peserta,
-         'program' => $program
+         'program' => $program,
+         'modal_crud' => 'yes'
        ];
 
-       $this->layout->load_backend_admin('kelas/peserta', $data);
+       $this->layout->load_backend_admin('kelas/detail', $data);
      }else {
        $this->alert('Pilih kelas terlebih dahulu', base_url('admin/kelas'));
      }
