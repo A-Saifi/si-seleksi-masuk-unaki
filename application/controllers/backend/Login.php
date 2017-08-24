@@ -18,14 +18,14 @@ class Login extends CI_Controller
 
   function index()
   {
-    $this->load->model('Role_model');
+    $this->load->model('admin/Role_model');
     $role = $this->Role_model->show_role();
     $this->load->view('_layout/backend/login', ['role' => $role]);
   }
 
   function auth()
   {
-    $this->load->model('Admin_model');
+    $this->load->model('admin/Admin_model');
     $auth = $this->Admin_model->login($this->input->post('username'));
 
     if ($auth==null) {
@@ -50,7 +50,7 @@ class Login extends CI_Controller
 
   function check_role($auth, $id_role)
   {
-    $this->load->model('Role_model');
+    $this->load->model('admin/Role_model');
     $role = $this->Role_model->search_role($id_role);
 
     if ($role!=null) {

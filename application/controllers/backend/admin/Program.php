@@ -7,7 +7,7 @@ class Program extends Admin
 
   function index()
   {
-    $this->load->model('Program_studi_model');
+    $this->load->model('admin/Program_studi_model');
     $status_row = $this->Program_studi_model->get_status_program_studi();
     $status =
           explode(",",
@@ -43,7 +43,7 @@ class Program extends Admin
         'status_program_studi' => $this->input->post('status_program_studi')
       ];
 
-      $this->load->model('Program_studi_model');
+      $this->load->model('admin/Program_studi_model');
       if ($this->Program_studi_model->insert($data)) {
         $this->alert("Data program studi berhasil ditambahkan", base_url('admin/program'));
       }else {
@@ -67,7 +67,7 @@ class Program extends Admin
         'status_program_studi' => $this->input->post('status_program_studi')
       ];
 
-      $this->load->model('Program_studi_model');
+      $this->load->model('admin/Program_studi_model');
       if ($this->Program_studi_model->update($this->input->post('id_program_studi'), $data)) {
         $this->alert("Data program studi berhasil diubah", base_url('admin/program'));
       }else {

@@ -8,7 +8,7 @@ class Kelas extends Admin
    {
       $this->load->library('backend/admin/check_kelas');
 
-      $this->load->model('Kelas_model');
+      $this->load->model('admin/Kelas_model');
       $status_row = $this->Kelas_model->get_status_kelas();
       $status =
             explode(",",
@@ -46,7 +46,7 @@ class Kelas extends Admin
          'status_kelas' => $this->input->post('status_kelas'),
        ];
 
-       $this->load->model('Kelas_model');
+       $this->load->model('admin/Kelas_model');
        if ($this->Kelas_model->insert($data)) {
          $this->alert("Data kelas berhasil ditambahkan", base_url('admin/kelas'));
        }else {
@@ -71,7 +71,7 @@ class Kelas extends Admin
          'status_kelas' => $this->input->post('status_kelas'),
        ];
 
-       $this->load->model('Kelas_model');
+       $this->load->model('admin/Kelas_model');
        if ($this->Kelas_model->update($this->input->post('id_kelas'), $data)) {
          $this->alert('Data kelas berhasil diubah', base_url('admin/kelas'));
        }else {
@@ -87,7 +87,7 @@ class Kelas extends Admin
      $this->load->library('backend/admin/check_kelas');
      if ($this->input->get('id')!=null) {
        if ($this->check_kelas->can_delete($this->input->get('id'))) {
-         $this->load->model('Kelas_model');
+         $this->load->model('admin/Kelas_model');
          $this->alert($this->Kelas_model->delete($this->input->get('id')), base_url('admin/kelas'));
        }else {
          $this->alert('Kelas tidak dapat dihapus', base_url('admin/kelas'));
@@ -100,11 +100,11 @@ class Kelas extends Admin
    function detail()
    {
      if ($this->input->get('kelas')!=null) {
-       $this->load->model('Kelas_model');
+       $this->load->model('admin/Kelas_model');
        $kelas = $this->Kelas_model->get_kelas($this->input->get('kelas'));
        $peserta = $this->Kelas_model->get_peserta($this->input->get('kelas'));
 
-       $this->load->model('Program_studi_model');
+       $this->load->model('admin/Program_studi_model');
        $program = $this->Program_studi_model->get_active();
 
        $data = [

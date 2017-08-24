@@ -6,7 +6,7 @@ class Peserta extends Admin
 {
   function index()
   {
-    $this->load->model('Peserta_model');
+    $this->load->model('admin/Peserta_model');
     $peserta = $this->Peserta_model->get_all();
 
     $data = [
@@ -30,7 +30,7 @@ class Peserta extends Admin
         'program_studi_peserta' => $this->input->post('program_studi_peserta'),
       ];
 
-      $this->load->model('Peserta_model');
+      $this->load->model('admin/Peserta_model');
       if ($this->Peserta_model->insert($data)) {
         $this->alert("Peserta berhasil ditambahkan", base_url('admin/kelas/detail?kelas='.$this->input->get('kelas')));
       }else {
@@ -50,17 +50,17 @@ class Peserta extends Admin
 
   function detail($username_peserta)
   {
-    $this->load->model('Peserta_model');
+    $this->load->model('admin/Peserta_model');
     $peserta = $this->Peserta_model->get_peserta($username_peserta);
 
-    $this->load->model('Program_studi_model');
+    $this->load->model('admin/Program_studi_model');
     $program = $this->Program_studi_model->get_active();
 
-    $this->load->model('Kelas_model');
+    $this->load->model('admin/Kelas_model');
     $daftar_kelas = $this->Kelas_model->get_active();
 
     if ($this->input->get('kelas')!=null) {
-      $this->load->model('Kelas_model');
+
       $kelas = $this->Kelas_model->get_kelas($this->input->get('kelas'));
 
       $data = [
@@ -87,7 +87,7 @@ class Peserta extends Admin
   function ubah()
   {
     if ($this->input->get('username')!=null && $this->input->get('kelas')!=null && $this->input->get('id')!=null) {
-      $this->load->model('Peserta_model');
+      $this->load->model('admin/Peserta_model');
       if ($this->input->get('kontak')!=null) {
         $data = [
           'telepon_peserta' => $this->input->post('telepon_peserta'),

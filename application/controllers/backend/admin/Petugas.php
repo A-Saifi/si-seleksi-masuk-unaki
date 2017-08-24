@@ -8,10 +8,10 @@ class Petugas extends Admin
   function index()
   {
 
-    $this->load->model('Admin_model');
+    $this->load->model('admin/Admin_model');
     $petugas = $this->Admin_model->get_all();
 
-    $this->load->model('Role_model');
+    $this->load->model('admin/Role_model');
     $role = $this->Role_model->show_role();
 
     $data = [
@@ -39,7 +39,7 @@ class Petugas extends Admin
         'role' => $this->input->post('role'),
       ];
 
-      $this->load->model('Admin_model');
+      $this->load->model('admin/Admin_model');
 
       if ($this->Admin_model->insert($data)) {
         $this->alert('Data petugas berhasil ditambahkan', base_url('admin/petugas'));
@@ -57,7 +57,7 @@ class Petugas extends Admin
   function hapus()
   {
     if ($this->input->get('id')!=null) {
-      $this->load->model('Admin_model');
+      $this->load->model('admin/Admin_model');
       $this->alert($this->Admin_model->delete($this->input->get('id')), base_url('admin/petugas'));
     }else {
       $this->alert('Tidak ada data petugas yang dapat dihapus', base_url('admin/petugas'));
@@ -85,7 +85,7 @@ class Petugas extends Admin
         ];
       }
 
-      $this->load->model('Admin_model');
+      $this->load->model('admin/Admin_model');
       if ($this->Admin_model->update($this->input->post('id_admin'), $data)) {
         $this->alert('Data petugas berhasil diubah', base_url('admin/petugas'));
       }else {
