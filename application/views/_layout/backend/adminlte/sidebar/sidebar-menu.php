@@ -32,7 +32,7 @@
     </a>
   </li>
 
-  <li class="treeview <?php if (isset($num_sidebar)) { echo $this->sidebar->active_tree($num_sidebar, 5, 10); } ?>">
+  <li class="treeview <?php if (isset($num_sidebar)) { echo $this->sidebar->active_tree($num_sidebar, 5, 11); } ?>">
     <a href="#">
       <i class="fa fa-book"></i> <span>Ujian</span>
       <span class="pull-right-container">
@@ -42,31 +42,35 @@
     <ul class="treeview-menu">
 
       <li class="<?php if (isset($num_sidebar)) { echo $this->sidebar->active($num_sidebar, 6); } ?>">
-        <a href="#"><i class="fa fa-tags"></i> Kategori Ujian</a>
+        <a href="#"><i class="fa fa-file-text"></i> Ujian</a>
       </li>
 
       <li class="<?php if (isset($num_sidebar)) { echo $this->sidebar->active($num_sidebar, 7); } ?>">
-        <a href="#"><i class="fa fa-question-circle"></i> Soal Ujian</a>
+        <a href="#"><i class="fa fa-tags"></i> Kategori Ujian</a>
       </li>
 
       <li class="<?php if (isset($num_sidebar)) { echo $this->sidebar->active($num_sidebar, 8); } ?>">
-        <a href="#"><i class="fa fa-key"></i> Jawaban Ujian</a>
+        <a href="#"><i class="fa fa-question-circle"></i> Soal Ujian</a>
       </li>
 
       <li class="<?php if (isset($num_sidebar)) { echo $this->sidebar->active($num_sidebar, 9); } ?>">
+        <a href="#"><i class="fa fa-key"></i> Jawaban Ujian</a>
+      </li>
+
+      <li class="<?php if (isset($num_sidebar)) { echo $this->sidebar->active($num_sidebar, 10); } ?>">
         <a href="#"><i class="fa fa-list-alt"></i> Hasil Ujian</a>
       </li>
 
     </ul>
   </li>
 
-  <!-- <li class="<?php if (isset($num_sidebar)) { echo $this->sidebar->active($num_sidebar, 10); } ?>">
+  <!-- <li class="<?php if (isset($num_sidebar)) { echo $this->sidebar->active($num_sidebar, 11); } ?>">
     <a href="">
       <i class="fa fa-envelope"></i> <span> Kotak Pesan</span>
     </a>
   </li> -->
 
-  <li class="<?php if (isset($num_sidebar)) { echo $this->sidebar->active($num_sidebar, 11); } ?>">
+  <li class="<?php if (isset($num_sidebar)) { echo $this->sidebar->active($num_sidebar, 12); } ?>">
     <a href="#">
       <i class="fa fa-file-pdf-o"></i> <span> Laporan</span>
     </a>
