@@ -43,6 +43,28 @@ class Peserta_model extends CI_Model
     return "Data peserta berhasil diubah";
   }
 
+  function update_login($id_peserta,$data)
+  {
+    $check = $this->db->get_where('peserta', ['username_peserta' => $data['username_peserta']]);
+    if ($check->num_rows()==0) {
+      $this->db
+        ->where('id_peserta', $id_peserta)
+        ->update('peserta', $data);
+      return true;
+    }elseif ($check->num_rows()==1) {
+      if ($this->db->get_where('peserta', ['id_peserta' => $id_peserta])->row()->username_peserta==$check->row()->username_peserta) {
+        $this->db
+          ->where('id_peserta', $id_peserta)
+          ->update('peserta', $data);
+        return true;
+      }else {
+        return false;
+      }
+    }else {
+      return false;
+    }
+  }
+
 }
 
 ?>

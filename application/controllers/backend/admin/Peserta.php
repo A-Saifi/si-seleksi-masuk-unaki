@@ -62,6 +62,7 @@ class Peserta extends Admin
         'num_sidebar' => 4,
         'peserta' => $peserta,
         'kelas' => $kelas,
+        'modal_crud' => 'yes',
       ];
 
       $this->layout->load_backend_admin('peserta/detail-kelas', $data);
@@ -97,9 +98,37 @@ class Peserta extends Admin
         ];
 
         $this->alert($this->Peserta_model->update_data($this->input->get('id'),$data), base_url('admin/peserta/detail/'.$this->input->get('username').'?kelas='.$this->input->get('kelas')));
+      }elseif ($this->input->get('login')!=null) {
+        if ($this->input->post('password_peserta')!=null) {
+          if ($this->input->post('password_peserta')==$this->input->post('password_peserta_ulangi')) {
+            $data = [
+              'username_peserta' => $this->input->post('username_peserta'),
+              'password_peserta' => $this->input->post('password_peserta')
+            ];
+
+            if ($this->Peserta_model->update_login($this->input->get('id'),$data)) {
+                $this->alert("Berhasil mengubah username dan password", base_url('admin/peserta/detail/'.$this->input->post('username_peserta').'?kelas='.$this->input->get('kelas')));
+            }else {
+                $this->alert("Username telah dipakai silahkan gunakan username lain", base_url('admin/peserta/detail/'.$this->input->get('username').'?kelas='.$this->input->get('kelas').'&edit=login'));
+            }
+          }else {
+            $this->alert("Ulangi password tidak sama dengan password, silahkan isi kembali", base_url('admin/peserta/detail/'.$this->input->get('username').'?kelas='.$this->input->get('kelas').'&edit=login'));
+          }
+        }else {
+          $data = [
+            'username_peserta' => $this->input->post('username_peserta'),
+          ];
+
+          if ($this->Peserta_model->update_login($this->input->get('id'),$data)) {
+              $this->alert("Berhasil mengubah username", base_url('admin/peserta/detail/'.$this->input->post('username_peserta').'?kelas='.$this->input->get('kelas')));
+          }else {
+              $this->alert("Username telah dipakai silahkan gunakan username lain", base_url('admin/peserta/detail/'.$this->input->get('username').'?kelas='.$this->input->get('kelas').'&edit=login'));
+          }
+        }
       }else {
         $this->alert("Tidak ada yang dapat diubah", base_url('admin/peserta'));
       }
+
     }else {
       $this->alert("Tidak ada yang dapat diubah", base_url('admin/peserta'));
     }

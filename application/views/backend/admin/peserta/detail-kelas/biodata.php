@@ -14,6 +14,7 @@
 
           </div>
         </div>
+        <?php $this->load->view('backend/admin/peserta/detail-kelas/biodata/informasi-login') ?>
 
         <?php $this->load->view('backend/admin/peserta/detail-kelas/biodata/kontak-informasi') ?>
   </div>
