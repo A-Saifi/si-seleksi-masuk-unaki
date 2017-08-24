@@ -29,8 +29,9 @@
                     <h4><i class="fa fa-warning"></i> Perhatian!</h4>
                     <p>Mohon maaf kami sedang melakukan maintenance.</p>
                   </div>
+                <?php else: ?>
+                  <?php $this->load->view('backend/admin/peserta/index/tabel-peserta') ?>  
                 <?php endif; ?>
-
               </div>
               <!-- /.box-body -->
         </div>

@@ -8,7 +8,8 @@ class Peserta_model extends CI_Model
   {
     $this->db
       ->select('*')
-      ->from('peserta');
+      ->from('peserta')
+      ->join('kelas', 'kelas.id_kelas = peserta.kelas_peserta');
 
     return $this->db->get()->result();
   }

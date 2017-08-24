@@ -10,9 +10,10 @@ class Peserta extends Admin
     $peserta = $this->Peserta_model->get_all();
 
     $data = [
-      'title' => 'Dashboard',
+      'title' => 'Daftar Peserta',
       'num_sidebar' => 5,
       'peserta' => $peserta,
+      'data_table' => 'yes',
     ];
 
     $this->layout->load_backend_admin('peserta/index', $data);

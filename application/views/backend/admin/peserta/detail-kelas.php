@@ -20,7 +20,12 @@
           <?php $this->load->view('backend/admin/peserta/detail-kelas/biodata') ?>
         </div>
         <div class="box-footer">
-          <a href="<?= base_url('admin/kelas/detail?kelas='.$kelas->id_kelas)  ?>" class="btn btn-primary pull-left"><i class="fa fa-arrow-left"></i> Kembali</a>
+          <?php if ($this->input->get('daftar')!=null): ?>
+            <a href="<?= base_url('admin/kelas/detail?kelas='.$kelas->id_kelas)  ?>" class="btn btn-primary pull-left"><i class="fa fa-arrow-left"></i> Kembali</a>
+          <?php endif; ?>
+          <?php if ($this->input->get('peserta')!=null): ?>
+            <a href="<?= base_url('admin/peserta')  ?>" class="btn btn-primary pull-left"><i class="fa fa-arrow-left"></i> Kembali</a>
+          <?php endif; ?>
         </div>
       </div>
     </div>
