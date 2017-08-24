@@ -29,6 +29,8 @@ class Peserta_model extends CI_Model
     $this->db
       ->select('*')
       ->from('peserta')
+      ->join('kelas', 'kelas.id_kelas = peserta.kelas_peserta')
+      ->join('program_studi', 'program_studi.id_program_studi = peserta.program_studi_peserta')
       ->where('username_peserta', $username_peserta);
 
     return $this->db->get()->row();

@@ -53,6 +53,12 @@ class Peserta extends Admin
     $this->load->model('Peserta_model');
     $peserta = $this->Peserta_model->get_peserta($username_peserta);
 
+    $this->load->model('Program_studi_model');
+    $program = $this->Program_studi_model->get_active();
+
+    $this->load->model('Kelas_model');
+    $daftar_kelas = $this->Kelas_model->get_active();
+
     if ($this->input->get('kelas')!=null) {
       $this->load->model('Kelas_model');
       $kelas = $this->Kelas_model->get_kelas($this->input->get('kelas'));
@@ -62,7 +68,9 @@ class Peserta extends Admin
         'num_sidebar' => 4,
         'peserta' => $peserta,
         'kelas' => $kelas,
+        'program' => $program,
         'modal_crud' => 'yes',
+        'daftar_kelas' => $daftar_kelas,
       ];
 
       $this->layout->load_backend_admin('peserta/detail-kelas', $data);
@@ -125,6 +133,13 @@ class Peserta extends Admin
               $this->alert("Username telah dipakai silahkan gunakan username lain", base_url('admin/peserta/detail/'.$this->input->get('username').'?kelas='.$this->input->get('kelas').'&edit=login'));
           }
         }
+      }elseif ($this->input->get('ujian')!=null) {
+        $data = [
+          'kelas_peserta' => $this->input->post('kelas_peserta'),
+          'program_studi_peserta' => $this->input->post('program_studi_peserta'),
+        ];
+
+        $this->alert($this->Peserta_model->update_data($this->input->get('id'),$data), base_url('admin/peserta/detail/'.$this->input->get('username').'?kelas='.$this->input->post('kelas_peserta')));
       }else {
         $this->alert("Tidak ada yang dapat diubah", base_url('admin/peserta'));
       }

@@ -21,5 +21,7 @@
 
   <div class="col-md-6">
     <?php $this->load->view('backend/admin/peserta/detail-kelas/biodata/informasi-umum') ?>
+
+    <?php $this->load->view('backend/admin/peserta/detail-kelas/biodata/informasi-ujian') ?>
   </div>
 </div>

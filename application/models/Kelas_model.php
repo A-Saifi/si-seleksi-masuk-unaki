@@ -93,6 +93,16 @@ class Kelas_model extends CI_Model
       return $this->db->get()->result();
     }
 
+    function get_active()
+    {
+      $this->db
+        ->select('*')
+        ->from('kelas')
+        ->where('status_kelas','active');
+
+      return $this->db->get()->result();
+    }
+
 }
 
 ?>
