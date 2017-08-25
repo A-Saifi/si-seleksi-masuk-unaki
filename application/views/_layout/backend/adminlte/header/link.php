@@ -12,6 +12,15 @@
      folder instead of downloading all of them to reduce the load. -->
 <link rel="stylesheet" href="<?= base_url('assets/adminlte/') ?>dist/css/skins/_all-skins.min.css">
 
+<?php if (isset($datepicker)): ?>
+<!-- daterange picker -->
+<link rel="stylesheet" href="<?= base_url('assets/adminlte/') ?>bower_components/bootstrap-daterangepicker/daterangepicker.css">
+<!-- bootstrap datepicker -->
+<link rel="stylesheet" href="<?= base_url('assets/adminlte/') ?>bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+<!-- Bootstrap time Picker -->
+<link rel="stylesheet" href="<?= base_url('assets/adminlte/') ?>plugins/timepicker/bootstrap-timepicker.min.css">
+<?php endif; ?>
+
 <?php if (isset($data_table)): ?>
   <link rel="stylesheet" href="<?= base_url('assets/adminlte/') ?>bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
 <?php endif; ?>

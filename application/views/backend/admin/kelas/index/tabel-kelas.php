@@ -26,7 +26,7 @@
       </tr>
     <?php endforeach; ?>
   </tbody>
-  <tfoot>
+  <!-- <tfoot>
   <tr>
     <th>Tahun</th>
     <th>Nama</th>
@@ -35,5 +35,5 @@
     <th>Detail</th>
     <th>Edit</th>
   </tr>
-  </tfoot>
+  </tfoot> -->
 </table>

@@ -14,23 +14,35 @@
     </a>
   </li>
 
-  <li class="<?php if (isset($num_sidebar)) { echo $this->sidebar->active($num_sidebar, 3); } ?>">
-    <a href="<?= base_url('admin/program')  ?>">
-      <i class="fa fa-graduation-cap"></i> <span>Program Studi</span>
+  <li class="treeview <?php if (isset($num_sidebar)) { echo $this->sidebar->active_tree($num_sidebar, 2, 6); } ?>">
+    <a href="#">
+      <i class="fa fa-cubes"></i> <span>Kelas & Peserta</span>
+      <span class="pull-right-container">
+        <i class="fa fa-angle-left pull-right"></i>
+      </span>
     </a>
+    <ul class="treeview-menu">
+      <li class="<?php if (isset($num_sidebar)) { echo $this->sidebar->active($num_sidebar, 3); } ?>">
+        <a href="<?= base_url('admin/program')  ?>">
+          <i class="fa fa-graduation-cap"></i> Program Studi
+        </a>
+      </li>
+
+      <li class="<?php if (isset($num_sidebar)) { echo $this->sidebar->active($num_sidebar, 4); } ?>">
+        <a href="<?= base_url('admin/kelas')  ?>">
+          <i class="fa fa-folder"></i> Kelas
+        </a>
+      </li>
+
+      <li class="<?php if (isset($num_sidebar)) { echo $this->sidebar->active($num_sidebar, 5); } ?>">
+        <a href="<?= base_url('admin/peserta')  ?>">
+          <i class="fa fa-users"></i> Peserta Ujian
+        </a>
+      </li>
+    </ul>
   </li>
 
-  <li class="<?php if (isset($num_sidebar)) { echo $this->sidebar->active($num_sidebar, 4); } ?>">
-    <a href="<?= base_url('admin/kelas')  ?>">
-      <i class="fa fa-folder"></i> <span>Kelas</span>
-    </a>
-  </li>
 
-  <li class="<?php if (isset($num_sidebar)) { echo $this->sidebar->active($num_sidebar, 5); } ?>">
-    <a href="<?= base_url('admin/peserta')  ?>">
-      <i class="fa fa-users"></i> <span>Peserta Ujian</span>
-    </a>
-  </li>
 
   <li class="treeview <?php if (isset($num_sidebar)) { echo $this->sidebar->active_tree($num_sidebar, 5, 11); } ?>">
     <a href="#">
@@ -42,7 +54,7 @@
     <ul class="treeview-menu">
 
       <li class="<?php if (isset($num_sidebar)) { echo $this->sidebar->active($num_sidebar, 6); } ?>">
-        <a href="#"><i class="fa fa-file-text"></i> Ujian</a>
+        <a href="<?= base_url('admin/ujian')  ?>"><i class="fa fa-file-text"></i> Ujian</a>
       </li>
 
       <li class="<?php if (isset($num_sidebar)) { echo $this->sidebar->active($num_sidebar, 7); } ?>">
