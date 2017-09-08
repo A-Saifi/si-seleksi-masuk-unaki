@@ -19,7 +19,8 @@
       <div class="col-md-12">
         <div class="box">
               <div class="box-header">
-                <h3 class="box-title">Semua Peserta</h3>
+                <i class="fa fa-table"></i>
+                <h3 class="box-title">Tabel Semua Peserta</h3>
               </div>
               <!-- /.box-header -->
               <div class="box-body">
@@ -27,10 +28,10 @@
                 <?php if ($peserta==null): ?>
                   <div class="callout callout-warning">
                     <h4><i class="fa fa-warning"></i> Perhatian!</h4>
-                    <p>Mohon maaf kami sedang melakukan maintenance.</p>
+                    <p>Mohon maaf tidak ada peserta.</p>
                   </div>
                 <?php else: ?>
-                  <?php $this->load->view('backend/admin/peserta/index/tabel-peserta') ?>  
+                  <?php $this->load->view('backend/admin/peserta/index/tabel-peserta') ?>
                 <?php endif; ?>
               </div>
               <!-- /.box-body -->

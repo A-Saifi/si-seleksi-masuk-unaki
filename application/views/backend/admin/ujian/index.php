@@ -20,7 +20,8 @@
         <!-- Default box -->
         <div class="box">
           <div class="box-header with-border">
-            <h3 class="box-title"><i class="fa fa-table"></i> Daftar Ujian</h3>
+            <i class="fa fa-table"></i>
+            <h3 class="box-title">Tabel</h3>
           </div>
           <div class="box-body">
             <?php $this->load->view('backend/admin/ujian/index/tabel-ujian') ?>
@@ -37,7 +38,8 @@
       <div class="col-md-4">
         <div class="box">
           <div class="box-header with-border">
-            <h3 class="box-title"><i class="fa fa-pencil-square"></i> Form Ujian</h3>
+            <i class="fa fa-pencil-square"></i>
+            <h3 class="box-title">Form</h3>
           </div>
           <form action="<?= base_url('admin/ujian/tambah')  ?>" method="post">
           <div class="box-body">

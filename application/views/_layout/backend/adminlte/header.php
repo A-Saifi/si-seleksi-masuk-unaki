@@ -16,7 +16,7 @@
   <?php $this->load->view('_layout/backend/adminlte/header/link')  ?>
 
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini fixed">
 <!-- Site wrapper -->
 <div class="wrapper">
 

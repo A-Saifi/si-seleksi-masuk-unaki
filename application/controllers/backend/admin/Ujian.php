@@ -28,6 +28,7 @@ class Ujian extends Admin
     $data = [
       'nama_ujian' => $this->input->post('nama_ujian'),
       'kategori_ujian' => $this->input->post('kategori_ujian'),
+      'deskripsi_ujian' => $this->input->post('deskripsi_ujian'),
     ];
 
     $this->load->model('admin/Ujian_model');
@@ -40,6 +41,7 @@ class Ujian extends Admin
       $data = [
         'nama_ujian' => $this->input->post('nama_ujian'),
         'kategori_ujian' => $this->input->post('kategori_ujian'),
+        'deskripsi_ujian' => $this->input->post('deskripsi_ujian'),
       ];
 
       $this->load->model('admin/Ujian_model');

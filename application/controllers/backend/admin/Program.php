@@ -24,7 +24,7 @@ class Program extends Admin
 
     $data = [
       'title' => 'Program Studi',
-      'num_sidebar' => 3,
+      'num_sidebar' => 4,
       'data_table' => 'yes',
       'modal_crud' => 'yes',
       'program_studi' => $program,

@@ -19,7 +19,8 @@
       <div class="col-md-8">
         <div class="box">
               <div class="box-header">
-                <h3 class="box-title"><i class="fa fa-table"></i> Tabel</h3>
+                <i class="fa fa-table"></i> 
+                <h3 class="box-title">Tabel</h3>
               </div>
               <!-- /.box-header -->
               <div class="box-body">

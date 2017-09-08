@@ -26,7 +26,7 @@ class Kelas extends Admin
 
       $data = [
           'title' => 'Kelas',
-          'num_sidebar' => 4,
+          'num_sidebar' => 3,
           'data_table' => 'yes',
           'status' => $status,
           'kelas' => $kelas,

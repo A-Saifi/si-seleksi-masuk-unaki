@@ -19,7 +19,10 @@
         <div class="box">
               <div class="box-header">
 
-                <button class="btn btn-primary" data-toggle="modal" data-target="#tambah"><i class="fa fa-plus"></i> Tambah Kelas</button>
+                <i class="fa fa-table"></i>
+                <h3 class="box-title">Tabel</h3>
+
+                <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#tambah"><i class="fa fa-plus"></i> Tambah Kelas</button>
                 <?php $this->load->view('backend/admin/kelas/index/modal-tambah') ?>
 
               </div>
@@ -34,7 +37,7 @@
                     <p>Tidak ada data kelas, silahkan tambahkan data kelas terlebih dahulu.</p>
                   </div>
                 <?php endif; ?>
-                
+
               </div>
               <!-- /.box-body -->
         </div>

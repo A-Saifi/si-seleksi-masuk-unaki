@@ -16,3 +16,8 @@
     <?php endforeach; ?>
   </select>
 </div>
+
+<div class="form-group">
+  <label>Deskripsi Ujian</label>
+  <textarea class="form-control" name="deskripsi_ujian" rows="4" placeholder="Tuliskan deskripsi ..."><?= $ujian->deskripsi_ujian ?></textarea>
+</div>
