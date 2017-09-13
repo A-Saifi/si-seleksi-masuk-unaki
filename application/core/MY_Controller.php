@@ -41,6 +41,8 @@ class Backend extends CI_Controller
     $this->load->helper(['url', 'html']);
     $this->load->library(['session', 'layout', 'backend/sidebar']);
 
+    date_default_timezone_set("Asia/Bangkok");
+
   }
 
   function alert($pesan, $url)

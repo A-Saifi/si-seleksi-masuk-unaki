@@ -15,22 +15,11 @@
   <!-- Main content -->
   <section class="content">
 
-    <!-- Default box -->
-    <div class="box">
-      <div class="box-header with-border">
-        <h3 class="box-title">Daftar Soal</h3>
-
+    <div class="row">
+      <div class="col-md-12">
+        <?php $this->load->view('backend/admin/soal/index/tabel-soal') ?>
       </div>
-      <div class="box-body">
-        Start creating your amazing application!
-      </div>
-      <!-- /.box-body -->
-      <div class="box-footer">
-        Footer
-      </div>
-      <!-- /.box-footer-->
     </div>
-    <!-- /.box -->
 
   </section>
   <!-- /.content -->
