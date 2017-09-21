@@ -9,7 +9,7 @@
 
   </div>
   <div class="box-body">
-    Start creating your amazing application!
+    <?php $this->load->view('backend/admin/soal/index/tabel-soal/tabel-soal') ?>
   </div>
   <!-- /.box-body -->
   <div class="box-footer">

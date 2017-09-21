@@ -9,6 +9,55 @@ class Soal_model extends CI_Model
       $this->db->insert('soal', $data);
       return true;
     }
+
+    function get_all()
+    {
+      $this->db
+        ->select('*')
+        ->from('soal');
+
+      return $this->db->get()->result();
+    }
+
+    function get_by_id($id_soal)
+    {
+      $this->db
+      ->select('*')
+      ->from('soal')
+      ->where('id_soal', $id_soal);
+
+      return $this->db->get()->row();
+    }
+
+    function update($id_soal, $data)
+    {
+      $this->db
+        ->where('id_soal', $id_soal)
+        ->update('soal', $data);
+      return true;
+    }
+
+    function delete($id_soal)
+    {
+      $response = $this->db->delete('soal',array('id_soal'=>$id_soal));
+      if($response)
+      {
+          return "Data soal berhasil dihapus";
+      }
+      else
+      {
+          return "Gagal menghapus soal";
+      }
+    }
+
+    function delete_picture($id_soal)
+    {
+      $data = ['gambar_soal' => ''];
+      $this->db
+        ->where('id_soal', $id_soal)
+        ->update('soal', $data);
+      return true;
+    }
 }
 
 ?>

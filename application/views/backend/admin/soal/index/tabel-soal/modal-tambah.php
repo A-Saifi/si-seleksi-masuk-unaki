@@ -7,7 +7,7 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title"><i class="fa fa-pencil-square"></i> Form Soal</h4>
         </div>
-        <form class="" action="<?= base_url('admin/soal/tambah')  ?>" method="post">
+        <form class="" action="<?= base_url('admin/soal/tambah')  ?>" method="post" enctype="multipart/form-data">
           <div class="modal-body">
 
             <?php $this->load->view('backend/admin/soal/index/tabel-soal/modal-tambah/form') ?>

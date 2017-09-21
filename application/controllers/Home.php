@@ -8,3 +8,5 @@ class Home extends Frontend {
 		$this->layout->load_frontend('home/index', ['title' => 'Ujian Online']);
 	}
 }
+
+?>

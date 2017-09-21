@@ -44,3 +44,7 @@ $(document).ready(function () {
 
 })
 </script>
+
+<?php if (isset($upload_gambar)): ?>
+  <script src="<?= base_url('assets/js/backend/') ?>upload-gambar.js"></script>
+<?php endif; ?>

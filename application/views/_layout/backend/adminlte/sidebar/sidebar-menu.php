@@ -32,7 +32,7 @@
     </a>
   </li>
 
-  <li class="treeview <?php if (isset($num_sidebar)) { echo $this->sidebar->active_tree($num_sidebar, 5, 11); } ?>">
+  <li class="treeview <?php if (isset($num_sidebar)) { echo $this->sidebar->active_tree($num_sidebar, 5, 10); } ?>">
     <a href="#">
       <i class="fa fa-book"></i> <span>Ujian</span>
       <span class="pull-right-container">
@@ -54,23 +54,19 @@
       </li>
 
       <li class="<?php if (isset($num_sidebar)) { echo $this->sidebar->active($num_sidebar, 9); } ?>">
-        <a href="#"><i class="fa fa-key"></i> Jawaban Ujian</a>
-      </li>
-
-      <li class="<?php if (isset($num_sidebar)) { echo $this->sidebar->active($num_sidebar, 10); } ?>">
         <a href="#"><i class="fa fa-list-alt"></i> Hasil Ujian</a>
       </li>
 
     </ul>
   </li>
 
-  <!-- <li class="<?php if (isset($num_sidebar)) { echo $this->sidebar->active($num_sidebar, 11); } ?>">
+  <!-- <li class="<?php if (isset($num_sidebar)) { echo $this->sidebar->active($num_sidebar, 10); } ?>">
     <a href="">
       <i class="fa fa-envelope"></i> <span> Kotak Pesan</span>
     </a>
   </li> -->
 
-  <li class="<?php if (isset($num_sidebar)) { echo $this->sidebar->active($num_sidebar, 12); } ?>">
+  <li class="<?php if (isset($num_sidebar)) { echo $this->sidebar->active($num_sidebar, 11); } ?>">
     <a href="#">
       <i class="fa fa-file-pdf-o"></i> <span> Laporan</span>
     </a>
