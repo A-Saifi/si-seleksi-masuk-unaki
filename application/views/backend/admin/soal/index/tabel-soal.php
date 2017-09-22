@@ -1,6 +1,6 @@
 <!-- Default box -->
 <div class="box">
-  <div class="box-header">
+  <div class="box-header with-border">
     <i class="fa fa-question-circle"></i>
     <h3 class="box-title">Daftar Soal</h3>
     <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#tambah"><i class="fa fa-plus"></i> Tambah Soal</button>

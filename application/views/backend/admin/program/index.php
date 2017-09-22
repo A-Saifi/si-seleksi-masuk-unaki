@@ -18,8 +18,8 @@
     <div class="row">
       <div class="col-md-8">
         <div class="box">
-              <div class="box-header">
-                <i class="fa fa-table"></i> 
+              <div class="box-header with-border">
+                <i class="fa fa-table"></i>
                 <h3 class="box-title">Tabel</h3>
               </div>
               <!-- /.box-header -->
