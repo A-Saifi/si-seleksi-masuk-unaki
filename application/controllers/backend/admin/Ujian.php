@@ -63,6 +63,15 @@ class Ujian extends Admin
     }
   }
 
+  function soal()
+  {
+    if (!empty($this->input->get('kelas'))) {
+      # code...
+    }else {
+      $this->alert("Silahkan pilih ujian terlebih dahulu", base_url('admin/ujian'));
+    }
+  }
+
 }
 
 ?>

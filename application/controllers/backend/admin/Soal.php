@@ -32,13 +32,13 @@ class Soal extends Admin
     if ($this->input->post('pertanyaan_soal')!=null) {
       if (empty($_FILES['gambar_soal']['name'])) {
         $soal = [
-          'id_soal' => strtotime('now'),
+          'id_soal' => time(),
           'pertanyaan_soal' => $this->input->post('pertanyaan_soal'),
         ];
       }else {
         $gambar = $this->upload_gambar();
         $soal = [
-          'id_soal' => strtotime('now'),
+          'id_soal' => time(),
           'pertanyaan_soal' => $this->input->post('pertanyaan_soal'),
           'gambar_soal' => $gambar['file_name'],
         ];

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends Frontend {
+class Home extends Pengunjung {
 
 	public function index()
 	{

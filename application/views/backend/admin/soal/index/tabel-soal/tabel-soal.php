@@ -14,7 +14,7 @@
     <tr>
     <td class="text-center"><?= $i+=1; ?></td>
     <td><?= $soal->id_soal ?></td>
-    <td><?= $soal->pertanyaan_soal ?></td>
+    <td><?= $this->text->pemendek($soal->pertanyaan_soal, 100) ?></td>
 
     <?php $this->load->view('backend/admin/soal/index/tabel-soal/modal-detail', ['soal' => $soal]) ?>
 
