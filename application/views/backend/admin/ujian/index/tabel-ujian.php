@@ -17,7 +17,7 @@
         <td><?= $ujian->nama_ujian ?></td>
         <td><?= $ujian->nama_kategori_ujian ?></td>
         <td>
-          <a href="<?= base_url('admin/ujian/soal?kelas=').$ujian->id_ujian ?>" class="btn btn-primary btn-xs btn-block">Lihat Soal</a>
+          <a href="<?= base_url('admin/ujian/soal?ujian=').$ujian->id_ujian ?>" class="btn btn-primary btn-xs btn-block">Lihat Soal</a>
         </td>
         <td>
           <button class="btn btn-warning btn-xs btn-block" data-toggle="modal" data-target="#edit<?= $ujian->id_ujian ?>"><i class="fa fa-pencil"></i> Edit</button>

@@ -42,6 +42,17 @@ class Ujian_model extends CI_Model
     }
   }
 
+  function get_by_id($id_ujian)
+  {
+    $this->db
+      ->select('*')
+      ->from('ujian')
+      ->join('kategori_ujian', 'kategori_ujian.id_kategori_ujian = ujian.kategori_ujian')
+      ->where('id_ujian', $id_ujian);
+
+    return $this->db->get()->row();
+  }
+
 }
 
 ?>
