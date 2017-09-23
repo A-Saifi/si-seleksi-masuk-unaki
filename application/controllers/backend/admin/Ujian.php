@@ -71,7 +71,7 @@ class Ujian extends Admin
       $ujian = $this->Ujian_model->get_by_id($id_ujian);
 
       $this->load->model('admin/Soal_ujian_model');
-      $soal = $this->Soal_ujian_model->get_all();
+      $soal = $this->Soal_ujian_model->get_by_ujian($id_ujian);
 
       $pilihan = ['A','B','C','D'];
 

@@ -109,7 +109,7 @@ class Kelas extends Admin
 
        $data = [
          'title' => 'Detail: '.$kelas->nama_kelas,
-         'num_sidebar' => 4,
+         'num_sidebar' => 3,
          'data_table' => 'yes',
          'kelas' => $kelas,
          'peserta' => $peserta,
@@ -118,6 +118,33 @@ class Kelas extends Admin
        ];
 
        $this->layout->load_backend_admin('kelas/detail', $data);
+     }else {
+       $this->alert('Pilih kelas terlebih dahulu', base_url('admin/kelas'));
+     }
+   }
+
+   // Daftar ujian yang dapat ditambahkan
+   function ujian()
+   {
+     $id_kelas = $this->input->get('kelas');
+
+     if (!empty($id_kelas)) {
+       $this->load->model('admin/Kelas_model');
+       $kelas = $this->Kelas_model->get_kelas($id_kelas);
+
+       $this->load->model('admin/Ujian_model');
+       $ujian = $this->Ujian_model->get_all();
+
+       $data = [
+         'title' => 'Pilih Ujian',
+         'num_sidebar' => 3,
+         'ujian' => $ujian,
+         'kelas' => $kelas,
+         'data_table' => 'yes',
+       ];
+
+       $this->load->library('backend/admin/penghitung');
+       $this->layout->load_backend_admin('kelas/ujian', $data);
      }else {
        $this->alert('Pilih kelas terlebih dahulu', base_url('admin/kelas'));
      }
