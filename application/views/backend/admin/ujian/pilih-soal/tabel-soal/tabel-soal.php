@@ -24,9 +24,15 @@
       </button>
     </td>
     <td>
-      <a href="<?= base_url('admin/ujian/simpan?ujian=').$this->input->get('ujian').'&soal='.$soal->id_soal ?>" class="btn btn-success btn-xs btn-block">
-        Pilih
-      </a>
+      <?php if ($soal->ujian_soal_ujian==$ujian->id_ujian): ?>
+        <button class="btn btn-danger btn-xs btn-block" disabled>
+          Pilih
+        </button>
+      <?php else: ?>
+        <a href="<?= base_url('admin/ujian/simpan?ujian=').$ujian->id_ujian.'&soal='.$soal->id_soal ?>" class="btn btn-success btn-xs btn-block">
+          Pilih
+        </a>
+      <?php endif; ?>
     </td>
   </tr>
   <?php endforeach; ?>

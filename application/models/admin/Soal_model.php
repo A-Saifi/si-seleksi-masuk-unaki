@@ -64,8 +64,7 @@ class Soal_model extends CI_Model
       $this->db
         ->select('*')
         ->from('soal')
-        ->join('soal_ujian', 'soal.id_soal = soal_ujian.soal_soal_ujian', 'left')
-        ->where('soal_ujian.id_soal_ujian', null);
+        ->join('soal_ujian', 'soal.id_soal = soal_ujian.soal_soal_ujian', 'left');
 
       return $this->db->get()->result();
     }
