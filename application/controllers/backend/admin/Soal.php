@@ -155,7 +155,7 @@ class Soal extends Admin
     if (!$this->upload->do_upload('gambar_soal')) {
         $error = $this->upload->display_errors();
         print_r($error);
-        break;
+        //break;
     } else {
         return $this->upload->data();
     }
