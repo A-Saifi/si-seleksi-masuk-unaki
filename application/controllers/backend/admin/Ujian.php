@@ -100,7 +100,7 @@ class Ujian extends Admin
       $ujian = $this->Ujian_model->get_by_id($id_ujian);
 
       $this->load->model('admin/Soal_model');
-      $soal = $this->Soal_model->get_soal_ujian();
+      $soal = $this->Soal_model->get_all();
 
       $pilihan = ['A','B','C','D'];
 
@@ -114,6 +114,7 @@ class Ujian extends Admin
       ];
 
       $this->load->library('backend/admin/jawaban');
+      $this->load->library('backend/admin/check_soal');
 
       $this->layout->load_backend_admin('ujian/pilih-soal', $data);
     }else {

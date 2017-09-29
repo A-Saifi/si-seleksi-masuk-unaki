@@ -24,7 +24,7 @@
       </button>
     </td>
     <td>
-      <?php if ($soal->ujian_soal_ujian==$ujian->id_ujian): ?>
+      <?php if ($this->check_soal->terpilih($ujian->id_ujian, $soal->id_soal)): ?>
         <button class="btn btn-danger btn-xs btn-block" disabled>
           Pilih
         </button>

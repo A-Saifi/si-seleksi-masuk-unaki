@@ -21,6 +21,17 @@ class Soal_ujian_model extends CI_Model
     return $this->db->get()->result();
   }
 
+  function get_by_ujian_soal($id_ujian, $id_soal)
+  {
+    $this->db
+      ->select('*')
+      ->from('soal_ujian')
+      ->where('ujian_soal_ujian', $id_ujian)
+      ->where('soal_soal_ujian', $id_soal);
+
+    return $this->db->get()->row();
+  }
+
   function delete($id_soal_ujian)
   {
     $response = $this->db->delete('soal_ujian',array('id_soal_ujian'=>$id_soal_ujian));
