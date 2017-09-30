@@ -128,14 +128,21 @@ class Kelas extends Admin
      }
    }
 
-   // Simpan ujian yang dipilih
+   // Menampilkan form dan Simpan ujian yang dipilih
    function simpan()
    {
      $kelas = $this->input->get('kelas');
      $ujian = $this->input->get('ujian');
+     $tanggal = $this->input->post('tanggal_kelas_ujian');
+     $mulai = $this->input->post('wkatu_mulai_kelas_ujian');
+     $akhir = $this->input->post('wkatu_akhir_kelas_ujian');
 
      if (!empty($kelas) && !empty($ujian)) {
-       echo "hello";
+       if (!empty($tanggal) && !empty($mulai) && !empty($akhir)) {
+         # code simpan here
+       }else {
+         # code tampil form here
+       }
      }else {
        $this->alert('Pilih kelas terlebih dahulu', base_url('admin/kelas'));
      }

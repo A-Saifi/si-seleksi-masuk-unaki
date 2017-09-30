@@ -1,3 +1,4 @@
+<!-- Tabel Ujian yang terdaftar pada kelas -->
 <table id="dt2" class="table table-bordered table-striped">
   <thead>
   <tr>
