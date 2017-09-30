@@ -107,6 +107,9 @@ class Kelas extends Admin
        $this->load->model('admin/Program_studi_model');
        $program = $this->Program_studi_model->get_active();
 
+       $this->load->model('admin/Ujian_model');
+       $ujian = $this->Ujian_model->get_all();
+
        $data = [
          'title' => 'Detail: '.$kelas->nama_kelas,
          'num_sidebar' => 3,
@@ -114,37 +117,25 @@ class Kelas extends Admin
          'kelas' => $kelas,
          'peserta' => $peserta,
          'program' => $program,
+         'ujian' => $ujian,
          'modal_crud' => 'yes'
        ];
 
+       $this->load->library('backend/admin/penghitung');
        $this->layout->load_backend_admin('kelas/detail', $data);
      }else {
        $this->alert('Pilih kelas terlebih dahulu', base_url('admin/kelas'));
      }
    }
 
-   // Daftar ujian yang dapat ditambahkan
-   function ujian()
+   // Simpan ujian yang dipilih
+   function simpan()
    {
-     $id_kelas = $this->input->get('kelas');
+     $kelas = $this->input->get('kelas');
+     $ujian = $this->input->get('ujian');
 
-     if (!empty($id_kelas)) {
-       $this->load->model('admin/Kelas_model');
-       $kelas = $this->Kelas_model->get_kelas($id_kelas);
-
-       $this->load->model('admin/Ujian_model');
-       $ujian = $this->Ujian_model->get_all();
-
-       $data = [
-         'title' => 'Pilih Ujian',
-         'num_sidebar' => 3,
-         'ujian' => $ujian,
-         'kelas' => $kelas,
-         'data_table' => 'yes',
-       ];
-
-       $this->load->library('backend/admin/penghitung');
-       $this->layout->load_backend_admin('kelas/ujian', $data);
+     if (!empty($kelas) && !empty($ujian)) {
+       echo "hello";
      }else {
        $this->alert('Pilih kelas terlebih dahulu', base_url('admin/kelas'));
      }

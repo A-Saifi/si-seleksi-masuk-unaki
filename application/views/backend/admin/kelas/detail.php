@@ -36,17 +36,12 @@
             <?php $this->load->view('backend/admin/kelas/detail/tabel-peserta') ?>
           <?php endif; ?>
 
-        </div>
-        <div class="box-footer">
-          <a href="<?= base_url('admin/kelas') ?>" type="button" class="btn btn-default pull-left">
-            Kembali
-          </a>
-
-          <a href="<?= base_url('admin/kelas/ujian?kelas=').$kelas->id_kelas ?>" type="button" class="btn btn-success pull-right">
-            <i class="fa fa-server"></i> Daftar Ujian
-          </a>
-        </div>
+        </div>        
       </div>
+    </div>
+
+    <div class="col-md-12">
+      <?php $this->load->view('backend/admin/kelas/detail/kelas-ujian') ?>
     </div>
   </div>
 </section>
