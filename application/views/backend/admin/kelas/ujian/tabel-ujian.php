@@ -10,9 +10,9 @@
   </tr>
   </thead>
   <tbody>
-    <?php foreach ($ujian as $ujian): ?>
+    <?php $i=0; foreach ($ujian as $ujian): ?>
       <tr>
-        <td></td>
+        <td><?= $i+=1 ?></td>
         <td><?= $ujian->nama_ujian ?></td>
         <td><?= $ujian->nama_kategori_ujian ?></td>
         <td><?= $this->penghitung->soal($ujian->id_ujian).' Soal' ?></td>

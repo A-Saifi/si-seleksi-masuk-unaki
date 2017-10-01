@@ -81,7 +81,8 @@ class Ujian extends Admin
         'ujian' => $ujian,
         'soal' => $soal,
         'pilihan' => $pilihan,
-        'data_table' => 'yes'
+        'data_table' => 'yes',
+        'panjang_teks' => 100
       ];
 
       $this->load->library('backend/admin/jawaban');

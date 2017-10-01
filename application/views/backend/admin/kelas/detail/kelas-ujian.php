@@ -4,12 +4,17 @@
     <h3 class="box-title">Daftar Ujian</h3>
   </div>
   <div class="box-body">
-    <?php $this->load->view('backend/admin/kelas/detail/tabel-ujian') ?>
+    <?php if (!empty($ujian_kelas)): ?>
+      <?php $this->load->view('backend/admin/kelas/detail/tabel-ujian') ?>
+    <?php else: ?>
+      <div class="callout callout-warning">
+        <h4><i class="fa fa-warning"></i> Perhatian!</h4>
+        <p>Tidak ada ujian di kelas <?= ucwords(strtolower($kelas->nama_kelas)) ?>.</p>
+        <p>Tambahkan ujian terlebih dahulu</p>
+      </div>
+    <?php endif; ?>
   </div>
   <div class="box-footer">
-    <!-- <a href="<?= base_url('admin/kelas/detail?kelas=').$kelas->id_kelas ?>" type="button" class="btn btn-default pull-left">
-      Kembali
-    </a> -->
     <a href="<?= base_url('admin/kelas') ?>" type="button" class="btn btn-default pull-left">
       Kembali
     </a>

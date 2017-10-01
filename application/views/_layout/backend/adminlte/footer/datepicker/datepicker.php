@@ -10,5 +10,12 @@
       showSeconds: true,
       showInputs: false
     })
+    $('#reservationtime').daterangepicker({
+      timePicker: true,
+      timePicker24Hour: true,
+      locale: {
+            format: 'MM/DD/YYYY H:mm'
+        }
+    })
   })
 </script>

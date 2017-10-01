@@ -99,16 +99,20 @@ class Kelas extends Admin
 
    function detail()
    {
-     if ($this->input->get('kelas')!=null) {
+     $id_kelas = $this->input->get('kelas');
+     if (!empty($id_kelas)) {
        $this->load->model('admin/Kelas_model');
-       $kelas = $this->Kelas_model->get_kelas($this->input->get('kelas'));
-       $peserta = $this->Kelas_model->get_peserta($this->input->get('kelas'));
+       $kelas = $this->Kelas_model->get_kelas($id_kelas);
+       $peserta = $this->Kelas_model->get_peserta($id_kelas);
 
        $this->load->model('admin/Program_studi_model');
        $program = $this->Program_studi_model->get_active();
 
        $this->load->model('admin/Ujian_model');
        $ujian = $this->Ujian_model->get_all();
+
+       $this->load->model('admin/Kelas_ujian_model');
+       $ujian_kelas = $this->Kelas_ujian_model->get_by_kelas($id_kelas);
 
        $data = [
          'title' => 'Detail: '.$kelas->nama_kelas,
@@ -118,6 +122,7 @@ class Kelas extends Admin
          'peserta' => $peserta,
          'program' => $program,
          'ujian' => $ujian,
+         'ujian_kelas' => $ujian_kelas,
          'modal_crud' => 'yes'
        ];
 
@@ -133,16 +138,73 @@ class Kelas extends Admin
    {
      $kelas = $this->input->get('kelas');
      $ujian = $this->input->get('ujian');
-     $tanggal = $this->input->post('tanggal_kelas_ujian');
-     $mulai = $this->input->post('wkatu_mulai_kelas_ujian');
-     $akhir = $this->input->post('wkatu_akhir_kelas_ujian');
+     $tanggal = $this->input->post('tanggal');
 
      if (!empty($kelas) && !empty($ujian)) {
-       if (!empty($tanggal) && !empty($mulai) && !empty($akhir)) {
+       if (!empty($tanggal)) {
          # code simpan here
+         $waktu = explode('-', $tanggal);
+         $mulai = strtotime($waktu[0]);
+         $akhir = strtotime($waktu[1]);
+
+         $kelas_ujian = [
+           'kelas_kelas_ujian' => $kelas,
+           'ujian_kelas_ujian' => $ujian,
+           'waktu_mulai_kelas_ujian' => $mulai,
+           'waktu_akhir_kelas_ujian' => $akhir
+         ];
+
+         $this->load->model('admin/Kelas_ujian_model');
+         $this->alert(
+           $this->Kelas_ujian_model->insert($kelas_ujian),
+           base_url('admin/Kelas/detail').'?kelas='.$kelas
+         );
        }else {
          # code tampil form here
+         $this->load->model('admin/Kelas_model');
+         $kelas_detail = $this->Kelas_model->get_kelas($kelas);
+
+         $this->load->model('admin/Ujian_model');
+         $ujian_detail = $this->Ujian_model->get_by_id($ujian);
+
+         $this->load->model('admin/Soal_ujian_model');
+         $soal = $this->Soal_ujian_model->get_by_ujian($ujian);
+
+         $pilihan = ['A','B','C','D'];
+
+         $data = [
+           'title' => 'Ujian Kelas: '.$ujian_detail->nama_ujian,
+           'num_sidebar' => 3,
+           'data_table' => 'yes',
+           'kelas' => $kelas_detail,
+           'ujian' => $ujian_detail,
+           'soal' => $soal,
+           'pilihan' => $pilihan,
+           'panjang_teks' => 125,
+           'datepicker' => 'yes',
+           'lihat_soal' => 'yes'
+         ];
+
+         $this->load->library('backend/admin/jawaban');
+         $this->layout->load_backend_admin('kelas/simpan', $data);
        }
+     }else {
+       $this->alert('Pilih kelas terlebih dahulu', base_url('admin/kelas'));
+     }
+   }
+
+   // Menghapus ujian pada kelas
+   function urungkan()
+   {
+     $ujian_kelas = $this->input->get(md5('ujian_kelas'));
+     if (!empty($ujian_kelas)) {
+       # code hapus here...
+       $this->load->model('admin/Kelas_ujian_model');
+       $kelas = $this->Kelas_ujian_model->get_by_id($ujian_kelas)->kelas_kelas_ujian;
+
+       $this->alert(
+         $this->Kelas_ujian_model->delete($ujian_kelas), 
+         base_url('admin/kelas/detail?kelas=').$kelas);
      }else {
        $this->alert('Pilih kelas terlebih dahulu', base_url('admin/kelas'));
      }
