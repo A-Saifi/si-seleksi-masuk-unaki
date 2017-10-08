@@ -43,6 +43,20 @@ class Pengunjung extends Frontend
   }
 }
 
+/**
+ *
+ */
+class Peserta extends Frontend
+{
+
+  function __construct()
+  {
+    parent::__construct();
+    $this->is_logged_in();
+  }
+}
+
+
 
 // START BACKEND vvvvv
 

@@ -56,8 +56,8 @@ $route['translate_uri_dashes'] = FALSE;
 $route['home'] = "home";
 
 // Login
-$route['login'] = "login";
-$route['login/(:any)'] = "login/$1";
+$route['login'] = "frontend/login";
+$route['login/(:any)'] = "frontend/login/$1";
 $route['admin/login'] = "backend/login";
 $route['admin/login/(:any)'] = "backend/login/$1";
 // End Login

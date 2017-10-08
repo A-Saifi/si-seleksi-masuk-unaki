@@ -25,7 +25,7 @@ class Peserta extends Admin
     if ($this->input->get('kelas')!=null) {
       $data = [
         'username_peserta' => $this->input->post('username_peserta'),
-        'password_peserta' => $this->input->post('password_peserta'),
+        'password_peserta' => md5($this->input->post('password_peserta')),
         'nama_peserta' => ucwords(strtolower($this->input->post('nama_peserta'))),
         'kelas_peserta' => $this->input->post('kelas_peserta'),
         'program_studi_peserta' => $this->input->post('program_studi_peserta'),

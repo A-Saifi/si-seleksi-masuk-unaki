@@ -4,12 +4,12 @@
     <img src="<?= base_url('assets/adminlte/'); ?>dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
     <p>
-      Alexander Pierce - Web Developer
-      <small>Member since Nov. 2012</small>
+      <?= ucwords(strtolower($this->session->userdata('peserta')->nama_peserta))  ?>
+      <small>Peserta Ujian</small>
     </p>
   </li>
   <!-- Menu Body -->
-  <li class="user-body">
+  <!-- <li class="user-body">
     <div class="row">
       <div class="col-xs-4 text-center">
         <a href="#">Followers</a>
@@ -21,15 +21,14 @@
         <a href="#">Friends</a>
       </div>
     </div>
-    <!-- /.row -->
-  </li>
+  </li> -->
   <!-- Menu Footer-->
   <li class="user-footer">
     <div class="pull-left">
-      <a href="#" class="btn btn-default btn-flat">Profile</a>
+      <a href="<?= base_url('dashboard') ?>" class="btn btn-default btn-flat">Dashboard</a>
     </div>
     <div class="pull-right">
-      <a href="#" class="btn btn-default btn-flat">Sign out</a>
+      <a href="<?= base_url('logout') ?>" class="btn btn-default btn-flat">Log out</a>
     </div>
   </li>
 </ul>

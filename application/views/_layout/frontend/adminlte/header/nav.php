@@ -32,7 +32,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <!-- The user image in the navbar-->
                 <img src="<?= base_url('assets/adminlte/'); ?>dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                <span class="hidden-xs"><?= ucwords(strtolower($this->session->userdata('peserta')->nama)) ?></span>
+                <span class="hidden-xs"><?= explode(' ',trim(ucwords(strtolower($this->session->userdata('peserta')->nama_peserta))))[0] ?></span>
                 </a>
                 <?php $this->load->view('_layout/frontend/adminlte/header/nav/usermenu')  ?>
               <?php endif; ?>

@@ -2,13 +2,13 @@
 /**
  *
  */
-class Logout extends Frontend
+class Logout extends Peserta
 {
   function index()
   {
     $this->session->unset_userdata('peserta');
     $this->session->sess_destroy();
-    redirect(base_url());
+    $this->alert("Anda berhasil LogOut", base_url());
   }
 }
 
